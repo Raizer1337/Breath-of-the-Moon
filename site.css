@@ -1,4 +1,4 @@
-/* site.css - Дыхание Луны - Огромные карточки */
+/* site.css - Дыхание Луны - Карточки-гиганты */
 
 * {
     margin: 0;
@@ -63,18 +63,18 @@ body.moon-breathing::after {
     position: fixed;
     top: 5%;
     right: 5%;
-    width: 350px;
-    height: 350px;
-    background: radial-gradient(circle at 35% 35%, rgba(255, 245, 210, 0.35), rgba(170, 150, 255, 0.2) 70%, transparent);
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle at 35% 35%, rgba(255, 245, 210, 0.4), rgba(170, 150, 255, 0.25) 70%, transparent);
     border-radius: 50%;
-    filter: blur(70px);
+    filter: blur(80px);
     z-index: -1;
     animation: moonDrift 20s infinite alternate ease-in-out;
 }
 
 @keyframes moonDrift {
     0% { transform: translate(0, 0) scale(1); opacity: 0.3; }
-    100% { transform: translate(-35px, -25px) scale(1.25); opacity: 0.6; }
+    100% { transform: translate(-40px, -30px) scale(1.3); opacity: 0.7; }
 }
 
 /* Навигация */
@@ -200,7 +200,7 @@ body.moon-breathing::after {
     margin: 0 auto;
 }
 
-/* Сетка карточек */
+/* Сетка карточек - ширина не меняется */
 .abilities-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
@@ -208,12 +208,12 @@ body.moon-breathing::after {
     margin: 4rem 0;
 }
 
-/* Карточка стиля - УВЕЛИЧЕННАЯ В 1.5 РАЗА */
+/* Карточка стиля - УВЕЛИЧЕННАЯ ПО ВЫСОТЕ В 2 РАЗА */
 .ability-card {
     background: rgba(20, 16, 35, 0.85);
     backdrop-filter: blur(8px);
     border: 1px solid rgba(180, 150, 255, 0.2);
-    border-radius: 36px;
+    border-radius: 40px;
     overflow: hidden;
     transition: all 0.3s ease;
     box-shadow: 0 25px 40px -15px rgba(0, 0, 0, 0.7);
@@ -228,12 +228,12 @@ body.moon-breathing::after {
     box-shadow: 0 30px 50px -12px rgba(140, 110, 255, 0.4);
 }
 
-/* ОГРОМНАЯ картинка - 450px высота (в 1.5 раза больше) */
+/* ГИГАНТСКАЯ картинка - 900px высота (в 2 раза больше предыдущих 450px) */
 .card-image {
     width: 100%;
-    height: 450px;
+    height: 900px;
     overflow: hidden;
-    border-bottom: 4px solid rgba(180, 150, 255, 0.4);
+    border-bottom: 5px solid rgba(180, 150, 255, 0.4);
 }
 
 .card-image img {
@@ -249,34 +249,34 @@ body.moon-breathing::after {
     transform: scale(1.1);
 }
 
-/* Контент карточки - увеличенный */
+/* Контент карточки - увеличен пропорционально */
 .card-content {
-    padding: 3rem 2.5rem 3rem;
+    padding: 4rem 3rem 4rem;
 }
 
 .ability-card h2 {
-    font-size: 1.6rem;
+    font-size: 2rem;
     font-weight: 800;
     text-transform: uppercase;
-    letter-spacing: 3px;
+    letter-spacing: 4px;
     color: #b09fff;
-    margin-bottom: 1.4rem;
+    margin-bottom: 1.8rem;
     opacity: 0.9;
 }
 
 .ability-name {
-    font-size: 2.4rem;
+    font-size: 3rem;
     font-weight: 800;
     line-height: 1.3;
     color: #ffffff;
-    margin-bottom: 2rem;
-    padding-bottom: 1.5rem;
-    border-bottom: 3px solid rgba(180, 150, 255, 0.3);
+    margin-bottom: 2.5rem;
+    padding-bottom: 2rem;
+    border-bottom: 4px solid rgba(180, 150, 255, 0.3);
     text-shadow: 0 2px 5px rgba(0,0,0,0.3);
 }
 
 .ability-description {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     line-height: 1.7;
     color: #dcd0ff;
     font-weight: 300;
@@ -288,7 +288,7 @@ body.moon-breathing::after {
     margin: 3rem auto;
     background: rgba(22, 18, 35, 0.8);
     padding: 3.5rem;
-    border-radius: 36px;
+    border-radius: 40px;
     border: 1px solid rgba(180, 150, 255, 0.25);
     backdrop-filter: blur(8px);
 }
@@ -321,14 +321,26 @@ body.moon-breathing::after {
     color: #9f8fd0;
 }
 
-/* Адаптивность */
-@media (max-width: 1100px) {
-    .abilities-grid {
-        grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+/* Адаптивность для разных экранов */
+@media (max-width: 1400px) {
+    .card-image {
+        height: 800px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .card-image {
+        height: 700px;
     }
     
+    .ability-name {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 1000px) {
     .card-image {
-        height: 400px;
+        height: 600px;
     }
 }
 
@@ -356,15 +368,19 @@ body.moon-breathing::after {
     }
     
     .card-image {
-        height: 350px;
+        height: 500px;
     }
     
     .ability-name {
-        font-size: 2rem;
+        font-size: 2.2rem;
     }
     
     .ability-description {
-        font-size: 1.2rem;
+        font-size: 1.3rem;
+    }
+    
+    .card-content {
+        padding: 3rem 2rem 3rem;
     }
     
     .main-content {
@@ -374,7 +390,7 @@ body.moon-breathing::after {
 
 @media (max-width: 500px) {
     .card-image {
-        height: 300px;
+        height: 400px;
     }
     
     .ability-name {
@@ -387,5 +403,20 @@ body.moon-breathing::after {
     
     .card-content {
         padding: 2rem 1.5rem 2rem;
+    }
+}
+
+/* Для очень больших экранов */
+@media (min-width: 2000px) {
+    .card-image {
+        height: 1000px;
+    }
+    
+    .ability-name {
+        font-size: 3.5rem;
+    }
+    
+    .ability-description {
+        font-size: 1.8rem;
     }
 }
