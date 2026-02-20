@@ -1,100 +1,330 @@
-/* Японские цифры и иероглифы */
-.ability-card h2 {
-    font-family: 'Noto Serif JP', 'Cormorant Garamond', serif;
-    font-size: 2rem;
-    color: #ffd966;
-    text-shadow: 0 0 15px #bfa5ff;
-    letter-spacing: 2px;
-    margin-bottom: 0.5rem;
+/* site.css - Полный стиль для Дыхания Луны */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.ability-card h2::before {
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Noto+Serif+JP:wght@200;400;700&display=swap');
+
+body.moon-breathing {
+    background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 50%, #0f0f1f 100%);
+    color: #e0e0e0;
+    font-family: 'Cormorant Garamond', 'Noto Serif JP', serif;
+    line-height: 1.6;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Эффект старой бумаги и текстуры */
+.old-paper-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        repeating-linear-gradient(45deg, rgba(255,255,255,0.02) 0px, rgba(255,255,255,0.02) 2px, transparent 2px, transparent 8px),
+        radial-gradient(circle at 20% 30%, rgba(100, 50, 150, 0.1) 0%, transparent 30%);
+    pointer-events: none;
+    z-index: 1;
+    mix-blend-mode: overlay;
+}
+
+/* Навигация */
+.nav-bar {
+    background: rgba(10, 10, 20, 0.85);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(200, 180, 255, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    font-size: 2rem;
+    text-decoration: none;
+    color: #e0c8ff;
+    text-shadow: 0 0 15px #a58aff, 0 0 30px #6b4eff;
+    transition: 0.3s;
+}
+
+.nav-logo:hover {
+    text-shadow: 0 0 25px #c9b6ff, 0 0 50px #8f7aff;
+    transform: scale(1.05);
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #d0c0ff;
+    font-size: 1.3rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    padding: 0.5rem 0;
+    position: relative;
+    transition: 0.3s;
+}
+
+.nav-menu a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #b7a4ff, #7a5fff, transparent);
+    transition: width 0.3s;
+}
+
+.nav-menu a:hover::after,
+.nav-menu a.active::after {
+    width: 100%;
+}
+
+.nav-menu a.active {
+    color: #ffffff;
+    text-shadow: 0 0 10px #b7a4ff;
+}
+
+/* Основной контейнер */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+/* Hero секция */
+.hero {
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.title {
+    font-size: 5rem;
+    font-weight: 700;
+    letter-spacing: 8px;
+    color: #f0e6ff;
+    text-shadow: 
+        0 0 20px #c9b6ff,
+        0 0 40px #9f8aff,
+        0 0 60px #6b4eff,
+        2px 2px 4px rgba(0,0,0,0.5);
+    margin-bottom: 1rem;
+    animation: titlePulse 3s infinite;
+}
+
+@keyframes titlePulse {
+    0%, 100% { text-shadow: 0 0 20px #c9b6ff, 0 0 40px #9f8aff, 0 0 60px #6b4eff; }
+    50% { text-shadow: 0 0 30px #e0d0ff, 0 0 60px #b7a4ff, 0 0 90px #8f7aff; }
+}
+
+.subtitle {
+    font-size: 1.8rem;
+    color: #c4b5e6;
+    font-style: italic;
+    margin-bottom: 2rem;
+}
+
+.crescent-moon {
+    width: 100px;
+    height: 100px;
+    margin: 2rem auto;
+    background: radial-gradient(circle at 30% 30%, #fffde7, #ffe68f);
+    border-radius: 50%;
+    box-shadow: 0 0 50px #ffd966, 0 0 100px #bfa5ff;
+    position: relative;
+    animation: moonGlow 4s infinite;
+}
+
+.crescent-moon::before {
     content: '';
     position: absolute;
     top: -10px;
     left: -10px;
     right: -10px;
     bottom: -10px;
-    background: radial-gradient(circle at center, rgba(255,215,0,0.1) 0%, transparent 70%);
-    opacity: 0;
-    transition: opacity 0.3s;
-    border-radius: 15px;
-    pointer-events: none;
-}
-
-.ability-card:hover h2::before {
-    opacity: 1;
-}
-
-/* Нумерация стилей с порядком */
-.ability-card {
-    position: relative;
-    overflow: visible;
-}
-
-.ability-card::after {
-    content: counter(style-counter);
-    counter-increment: style-counter;
-    position: absolute;
-    top: -15px;
-    right: -15px;
-    width: 40px;
-    height: 40px;
-    background: rgba(20, 15, 30, 0.9);
-    border: 2px solid #b7a4ff;
     border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Noto Serif JP', serif;
-    font-size: 1.2rem;
-    color: #ffd966;
-    box-shadow: 0 0 20px rgba(183, 164, 255, 0.5);
-    opacity: 0;
-    transform: scale(0.8);
-    transition: all 0.3s;
+    background: radial-gradient(circle at 30% 30%, rgba(255,240,200,0.3), transparent 70%);
+    filter: blur(10px);
+    z-index: -1;
 }
 
-.ability-card:hover::after {
-    opacity: 1;
-    transform: scale(1);
+@keyframes moonGlow {
+    0%, 100% { box-shadow: 0 0 50px #ffd966, 0 0 100px #bfa5ff; }
+    50% { box-shadow: 0 0 80px #fff2b5, 0 0 150px #d9c2ff; }
 }
 
-/* Сброс счетчика для сетки */
+/* Lore секция */
+.lore-section {
+    margin: 5rem 0;
+    padding: 2rem;
+    background: rgba(20, 15, 30, 0.6);
+    border: 1px solid rgba(180, 150, 255, 0.3);
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.lore-section h2 {
+    font-size: 2.5rem;
+    color: #e6d5ff;
+    text-align: center;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.lore-section h2::before,
+.lore-section h2::after {
+    content: '🌙';
+    font-size: 2rem;
+    margin: 0 1rem;
+    opacity: 0.7;
+}
+
+.lore-content {
+    font-size: 1.3rem;
+    color: #d0c4e0;
+    line-height: 1.8;
+}
+
+.lore-content p {
+    margin-bottom: 1.5rem;
+    text-indent: 2rem;
+}
+
+/* Цитата */
+.quote-section {
+    margin: 5rem 0;
+}
+
+.quote-card {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: linear-gradient(145deg, rgba(30, 20, 40, 0.7), rgba(10, 5, 20, 0.9));
+    border-left: 5px solid #9f8aff;
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0 5px 25px rgba(106, 90, 255, 0.3);
+}
+
+.quote {
+    font-size: 2rem;
+    font-style: italic;
+    color: #f0e2ff;
+    text-shadow: 0 0 10px #b79eff;
+    margin-bottom: 1rem;
+}
+
+.author {
+    text-align: right;
+    font-size: 1.3rem;
+    color: #a394c4;
+}
+
+/* Promotion Page */
+.promotion-page .page-header {
+    text-align: center;
+    margin: 3rem 0;
+}
+
+.glow-text {
+    font-size: 4rem;
+    color: #ede0ff;
+    text-shadow: 0 0 30px #b7a4ff;
+    margin-bottom: 0.5rem;
+}
+
+.sub-title {
+    display: block;
+    font-size: 2rem;
+    color: #b9a6e6;
+}
+
+.moon-divider {
+    width: 200px;
+    height: 2px;
+    margin: 2rem auto;
+    background: linear-gradient(90deg, transparent, #b7a4ff, #7a5fff, #b7a4ff, transparent);
+}
+
+.header-description {
+    font-size: 1.5rem;
+    color: #c4b5e6;
+    font-style: italic;
+    margin-top: 1rem;
+    text-align: center;
+    text-shadow: 0 0 10px rgba(183, 164, 255, 0.5);
+}
+
+/* Сетка способностей */
 .abilities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
     counter-reset: style-counter;
 }
 
-/* Стили для японских цифр в каждом конкретном случае */
-.ability-card[style*="--order: 1;"] h2,
-.ability-card[style*="--order: 2;"] h2,
-.ability-card[style*="--order: 3;"] h2,
-.ability-card[style*="--order: 5;"] h2,
-.ability-card[style*="--order: 6;"] h2,
-.ability-card[style*="--order: 7;"] h2,
-.ability-card[style*="--order: 8;"] h2,
-.ability-card[style*="--order: 9;"] h2,
-.ability-card[style*="--order: 10;"] h2,
-.ability-card[style*="--order: 14;"] h2,
-.ability-card[style*="--order: 16;"] h2 {
-    font-size: 1.8rem;
-}
-
-/* Эффект лунного света для карточек */
 .ability-card {
+    background: rgba(20, 15, 30, 0.7);
+    border: 1px solid rgba(180, 150, 255, 0.3);
+    border-radius: 15px;
+    padding: 2rem 1rem;
+    text-align: center;
     backdrop-filter: blur(5px);
     transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    min-height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: cardAppear 0.8s ease-out forwards;
+    opacity: 0;
 }
 
-.ability-card:hover {
-    transform: translateY(-15px) scale(1.05);
-    box-shadow: 
-        0 0 30px rgba(159, 138, 255, 0.6),
-        0 0 60px rgba(106, 90, 255, 0.3);
-    border-color: #ffd966;
-}
+.ability-card[style*="--order: 1;"] { animation-delay: 0.1s; }
+.ability-card[style*="--order: 2;"] { animation-delay: 0.2s; }
+.ability-card[style*="--order: 3;"] { animation-delay: 0.3s; }
+.ability-card[style*="--order: 5;"] { animation-delay: 0.4s; }
+.ability-card[style*="--order: 6;"] { animation-delay: 0.5s; }
+.ability-card[style*="--order: 7;"] { animation-delay: 0.6s; }
+.ability-card[style*="--order: 8;"] { animation-delay: 0.7s; }
+.ability-card[style*="--order: 9;"] { animation-delay: 0.8s; }
+.ability-card[style*="--order: 10;"] { animation-delay: 0.9s; }
+.ability-card[style*="--order: 14;"] { animation-delay: 1s; }
+.ability-card[style*="--order: 16;"] { animation-delay: 1.1s; }
 
-/* Анимация появления карточек */
 @keyframes cardAppear {
     from {
         opacity: 0;
@@ -106,30 +336,148 @@
     }
 }
 
-.ability-card {
-    animation: cardAppear 0.8s ease-out forwards;
-    animation-delay: calc(0.1s * var(--order, 1));
-    opacity: 0;
+.ability-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+    transition: left 0.5s;
 }
 
-/* Стили для страницы */
-.page-header h1 {
-    font-size: 4rem;
-    letter-spacing: 4px;
+.ability-card:hover::before {
+    left: 100%;
 }
 
-.page-header .sub-title {
+.ability-card:hover {
+    transform: translateY(-15px) scale(1.05);
+    box-shadow: 
+        0 0 30px rgba(159, 138, 255, 0.6),
+        0 0 60px rgba(106, 90, 255, 0.3);
+    border-color: #ffd966;
+}
+
+.ability-card h2 {
+    font-family: 'Noto Serif JP', 'Cormorant Garamond', serif;
     font-size: 2rem;
+    color: #ffd966;
+    text-shadow: 0 0 15px #bfa5ff;
+    letter-spacing: 2px;
+    margin-bottom: 0.5rem;
+}
+
+.ability-card .ability-name {
+    font-size: 1.3rem;
     color: #e6d5ff;
+    font-weight: 300;
     margin-top: 0.5rem;
+    line-height: 1.4;
+}
+
+.card-front, .card-back {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.card-back p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #f0e6ff;
+    padding: 1rem;
+}
+
+/* Scroll show секция */
+.scroll-show {
+    text-align: center;
+    padding: 4rem 2rem;
+    margin: 4rem 0;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" opacity="0.1"><path d="M20,20 L80,20 L80,80 L20,80 Z" fill="none" stroke="%23b7a4ff" stroke-width="1"/><circle cx="50" cy="50" r="10" fill="none" stroke="%23b7a4ff"/></svg>');
+    border-radius: 30px;
+}
+
+.scroll-show h2 {
+    font-size: 3rem;
+    color: #efe2ff;
+    margin-bottom: 1.5rem;
+}
+
+.scroll-show p {
+    font-size: 1.5rem;
+    max-width: 700px;
+    margin: 0 auto 2rem;
+    color: #d4c2f0;
+}
+
+.crescent-button {
+    background: transparent;
+    border: 2px solid #b7a4ff;
+    color: #b7a4ff;
+    font-size: 1.5rem;
+    font-family: 'Cormorant Garamond', serif;
+    padding: 1rem 3rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.4s;
+    position: relative;
+    overflow: hidden;
+    letter-spacing: 2px;
+}
+
+.crescent-button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(183, 164, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.crescent-button:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.crescent-button:hover {
+    color: #0f0f1f;
+    background: #b7a4ff;
+    border-color: #b7a4ff;
+    box-shadow: 0 0 30px #b7a4ff;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 2rem;
+    margin-top: 4rem;
+    border-top: 1px solid rgba(200, 180, 255, 0.2);
+    font-size: 1.2rem;
+    color: #a394c4;
+    position: relative;
+    z-index: 2;
+}
+
+/* Анимации */
+.fade-in {
+    animation: fadeIn 1.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 /* Фоновые элементы */
-body.moon-breathing {
-    position: relative;
-}
-
-body.moon-breathing::before {
+body.moon-breathing::after {
     content: '月';
     position: fixed;
     bottom: 20px;
@@ -148,19 +496,86 @@ body.moon-breathing::before {
     50% { transform: rotate(12deg) translateY(-20px); }
 }
 
-/* Улучшенные лунные лучи */
-.moon-divider {
-    position: relative;
-    overflow: hidden;
+/* Эффект лунных лучей */
+body.moon-breathing::before {
+    content: '';
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(ellipse at 70% 30%, rgba(150, 130, 255, 0.05) 0%, transparent 50%);
+    animation: rotateRays 20s linear infinite;
+    z-index: 0;
+    pointer-events: none;
 }
 
-.moon-divider::before {
-    content: '';
-    position: absolute;
-    top: -10px;
-    left: 0;
-    width: 100%;
-    height: 20px;
-    background: radial-gradient(ellipse at center, rgba(255,215,0,0.2) 0%, transparent 70%);
-    filter: blur(10px);
+@keyframes rotateRays {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .title {
+        font-size: 3rem;
+    }
+    
+    .subtitle {
+        font-size: 1.3rem;
+    }
+    
+    .nav-menu {
+        gap: 1rem;
+    }
+    
+    .nav-menu a {
+        font-size: 1rem;
+    }
+    
+    .abilities-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .glow-text {
+        font-size: 2.5rem;
+    }
+    
+    .ability-card .ability-name {
+        font-size: 1rem;
+    }
+    
+    .card-front h2 {
+        font-size: 1.5rem;
+    }
+    
+    .header-description {
+        font-size: 1.2rem;
+    }
+    
+    .scroll-show h2 {
+        font-size: 2rem;
+    }
+    
+    .scroll-show p {
+        font-size: 1.2rem;
+    }
+}
+
+/* Стилизация скролла */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1a1a2e;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #4a3f6e, #2a2352);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #6b5a9e, #3f3570);
 }
