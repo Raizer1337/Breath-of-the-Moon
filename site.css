@@ -1,4 +1,4 @@
-/* site.css - Дыхание Луны - Полный стиль */
+/* site.css - Дыхание Луны - Элегантный стиль */
 
 * {
     margin: 0;
@@ -6,19 +6,19 @@
     box-sizing: border-box;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 body.moon-breathing {
-    background: #0a0a14;
-    color: #e0e0e0;
-    font-family: 'Cormorant Garamond', serif;
-    line-height: 1.6;
+    background: #0b0710;
+    color: #e9e2f5;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.5;
     min-height: 100vh;
     position: relative;
     overflow-x: hidden;
 }
 
-/* Ночное небо с луной и звездами */
+/* Фоновое свечение */
 body.moon-breathing::before {
     content: '';
     position: fixed;
@@ -26,13 +26,14 @@ body.moon-breathing::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(ellipse at 70% 20%, rgba(100, 80, 200, 0.2) 0%, transparent 50%),
-                radial-gradient(ellipse at 30% 80%, rgba(150, 120, 255, 0.15) 0%, transparent 50%),
-                linear-gradient(125deg, #0a0a1a 0%, #1a1a3a 50%, #0a0a1a 100%);
+    background: 
+        radial-gradient(circle at 30% 40%, rgba(110, 80, 220, 0.15) 0%, transparent 40%),
+        radial-gradient(circle at 80% 70%, rgba(80, 60, 200, 0.12) 0%, transparent 40%),
+        linear-gradient(145deg, #0c0818 0%, #1a1230 50%, #0c0818 100%);
     z-index: -2;
 }
 
-/* Звезды */
+/* Мелкие звезды */
 body.moon-breathing::after {
     content: '';
     position: fixed;
@@ -41,127 +42,93 @@ body.moon-breathing::after {
     width: 100%;
     height: 100%;
     background-image: 
-        radial-gradient(2px 2px at 10px 20px, #fff, rgba(0,0,0,0)),
-        radial-gradient(2px 2px at 30px 150px, #fff, rgba(0,0,0,0)),
-        radial-gradient(2px 2px at 80px 250px, #fff, rgba(0,0,0,0)),
-        radial-gradient(3px 3px at 150px 80px, #fff, rgba(0,0,0,0)),
-        radial-gradient(2px 2px at 220px 340px, #fff, rgba(0,0,0,0)),
-        radial-gradient(3px 3px at 300px 120px, #fff, rgba(0,0,0,0)),
-        radial-gradient(2px 2px at 400px 280px, #fff, rgba(0,0,0,0)),
-        radial-gradient(3px 3px at 500px 400px, #fff, rgba(0,0,0,0)),
-        radial-gradient(2px 2px at 600px 150px, #fff, rgba(0,0,0,0)),
-        radial-gradient(3px 3px at 700px 350px, #fff, rgba(0,0,0,0)),
-        radial-gradient(2px 2px at 800px 200px, #fff, rgba(0,0,0,0)),
-        radial-gradient(3px 3px at 900px 450px, #fff, rgba(0,0,0,0)),
-        radial-gradient(2px 2px at 1000px 300px, #fff, rgba(0,0,0,0)),
-        radial-gradient(3px 3px at 1100px 100px, #fff, rgba(0,0,0,0)),
-        radial-gradient(2px 2px at 1200px 380px, #fff, rgba(0,0,0,0)),
-        radial-gradient(3px 3px at 1300px 220px, #fff, rgba(0,0,0,0)),
-        radial-gradient(2px 2px at 1400px 500px, #fff, rgba(0,0,0,0)),
-        radial-gradient(3px 3px at 1500px 80px, #fff, rgba(0,0,0,0)),
-        radial-gradient(2px 2px at 1600px 400px, #fff, rgba(0,0,0,0)),
-        radial-gradient(3px 3px at 1700px 280px, #fff, rgba(0,0,0,0));
+        radial-gradient(1px 1px at 15px 60px, #fff, rgba(0,0,0,0)),
+        radial-gradient(1.5px 1.5px at 50px 120px, #fff, rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 120px 200px, #fff, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 200px 80px, #fff, rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 300px 250px, #fff, rgba(0,0,0,0)),
+        radial-gradient(1.5px 1.5px at 400px 150px, #fff, rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 520px 300px, #fff, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 650px 90px, #fff, rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 750px 350px, #fff, rgba(0,0,0,0)),
+        radial-gradient(1.5px 1.5px at 850px 180px, #fff, rgba(0,0,0,0));
     background-repeat: repeat;
-    opacity: 0.6;
+    opacity: 0.5;
     z-index: -1;
     pointer-events: none;
-    animation: starsTwinkle 4s infinite alternate;
 }
 
-@keyframes starsTwinkle {
-    0% { opacity: 0.4; }
-    100% { opacity: 0.8; }
-}
-
-/* Полупрозрачная луна на фоне */
+/* Луна на фоне */
 .moon-bg {
     position: fixed;
-    top: 10%;
+    top: 5%;
     right: 5%;
-    width: 200px;
-    height: 200px;
-    background: radial-gradient(circle at 30% 30%, rgba(255, 240, 200, 0.2), rgba(200, 180, 255, 0.1) 70%, transparent);
+    width: 250px;
+    height: 250px;
+    background: radial-gradient(circle at 35% 35%, rgba(245, 235, 200, 0.25), rgba(160, 140, 240, 0.1) 70%, transparent);
     border-radius: 50%;
-    filter: blur(30px);
+    filter: blur(50px);
     z-index: -1;
-    animation: moonFloat 15s infinite alternate;
+    animation: moonDrift 20s infinite alternate ease-in-out;
 }
 
-@keyframes moonFloat {
+@keyframes moonDrift {
     0% { transform: translate(0, 0) scale(1); opacity: 0.3; }
-    100% { transform: translate(-20px, -20px) scale(1.1); opacity: 0.5; }
-}
-
-/* Эффект лунных лучей */
-.moon-rays {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: repeating-linear-gradient(45deg, 
-        transparent 0px, 
-        transparent 50px, 
-        rgba(200, 180, 255, 0.02) 50px, 
-        rgba(200, 180, 255, 0.02) 100px);
-    pointer-events: none;
-    z-index: -1;
-    animation: raysMove 30s linear infinite;
-}
-
-@keyframes raysMove {
-    0% { background-position: 0 0; }
-    100% { background-position: 200px 200px; }
+    100% { transform: translate(-25px, -15px) scale(1.15); opacity: 0.5; }
 }
 
 /* Навигация */
 .nav-bar {
-    background: rgba(5, 5, 15, 0.7);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(200, 180, 255, 0.2);
+    background: rgba(8, 6, 16, 0.75);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(170, 140, 250, 0.2);
     position: sticky;
     top: 0;
-    z-index: 1000;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.7);
+    z-index: 100;
 }
 
 .nav-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 1rem 2rem;
+    padding: 0.9rem 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 .nav-logo {
-    font-size: 2.2rem;
+    font-size: 1.5rem;
+    font-weight: 600;
     text-decoration: none;
-    color: #e8ddff;
-    text-shadow: 0 0 20px #aaa5ff, 0 0 40px #7a6eff;
-    transition: 0.3s;
+    color: #e4daff;
+    letter-spacing: 0.5px;
+    background: rgba(140, 110, 255, 0.1);
+    padding: 0.5rem 1.2rem;
+    border-radius: 40px;
+    border: 1px solid rgba(170, 140, 250, 0.3);
+    transition: 0.2s;
 }
 
 .nav-logo:hover {
-    text-shadow: 0 0 30px #d0c0ff, 0 0 60px #9f8aff;
-    transform: scale(1.05);
+    background: rgba(170, 140, 250, 0.2);
+    border-color: rgba(200, 180, 255, 0.6);
+    transform: translateY(-1px);
 }
 
 .nav-menu {
     display: flex;
     list-style: none;
-    gap: 2.5rem;
+    gap: 2rem;
 }
 
 .nav-menu a {
     text-decoration: none;
-    color: #d8ccff;
-    font-size: 1.4rem;
+    color: #ccc3f0;
+    font-size: 1.1rem;
     font-weight: 500;
-    letter-spacing: 1px;
-    padding: 0.5rem 0;
+    padding: 0.5rem 0.2rem;
     position: relative;
-    transition: 0.3s;
+    transition: 0.2s;
 }
 
 .nav-menu a::after {
@@ -171,8 +138,8 @@ body.moon-breathing::after {
     left: 0;
     width: 0;
     height: 2px;
-    background: linear-gradient(90deg, transparent, #c4b5ff, #9f8aff, transparent);
-    transition: width 0.3s;
+    background: linear-gradient(90deg, #a28eff, #7a5fff);
+    transition: width 0.2s ease;
 }
 
 .nav-menu a:hover::after,
@@ -182,7 +149,6 @@ body.moon-breathing::after {
 
 .nav-menu a.active {
     color: #ffffff;
-    text-shadow: 0 0 15px #c4b5ff;
 }
 
 /* Основной контейнер */
@@ -194,391 +160,131 @@ body.moon-breathing::after {
     z-index: 2;
 }
 
-/* Hero секция */
-.hero {
-    min-height: 70vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+/* Заголовок страницы */
+.page-header {
     text-align: center;
-    position: relative;
-}
-
-.hero-content {
-    max-width: 800px;
-}
-
-.title {
-    font-size: 5rem;
-    font-weight: 700;
-    letter-spacing: 6px;
-    color: #f5ecff;
-    text-shadow: 
-        0 0 20px #cab8ff,
-        0 0 40px #aa99ff,
-        0 0 70px #8a7aff,
-        0 0 100px #6b54ff;
-    margin-bottom: 1rem;
-    animation: titleGlow 4s infinite;
-}
-
-@keyframes titleGlow {
-    0%, 100% { text-shadow: 0 0 20px #cab8ff, 0 0 40px #aa99ff, 0 0 70px #8a7aff; }
-    50% { text-shadow: 0 0 30px #e0d0ff, 0 0 60px #c4b5ff, 0 0 90px #aa99ff; }
-}
-
-.subtitle {
-    font-size: 2rem;
-    color: #d9ccf5;
-    font-style: italic;
-    margin-bottom: 2rem;
-    text-shadow: 0 0 15px #7a6eff;
-}
-
-.crescent-moon {
-    width: 120px;
-    height: 120px;
-    margin: 2rem auto;
-    background: radial-gradient(circle at 30% 30%, #fff9e6, #ffeeb5);
-    border-radius: 50%;
-    box-shadow: 0 0 70px #ffec99, 0 0 140px #c4b5ff;
-    position: relative;
-    animation: moonPulse 5s infinite;
-}
-
-.crescent-moon::before {
-    content: '';
-    position: absolute;
-    top: -15px;
-    left: -15px;
-    right: -15px;
-    bottom: -15px;
-    border-radius: 50%;
-    background: radial-gradient(circle at 30% 30%, rgba(255, 250, 220, 0.3), transparent 70%);
-    filter: blur(15px);
-    z-index: -1;
-}
-
-@keyframes moonPulse {
-    0%, 100% { box-shadow: 0 0 70px #ffec99, 0 0 140px #c4b5ff; transform: scale(1); }
-    50% { box-shadow: 0 0 100px #fff2b5, 0 0 200px #e0d0ff; transform: scale(1.05); }
-}
-
-/* Lore секция */
-.lore-section {
-    margin: 5rem 0;
-    padding: 3rem;
-    background: rgba(10, 8, 20, 0.6);
-    border: 1px solid rgba(200, 170, 255, 0.3);
-    border-radius: 30px;
-    backdrop-filter: blur(5px);
-    box-shadow: 0 15px 40px rgba(0,0,0,0.7), 0 0 30px rgba(150, 130, 255, 0.2);
-}
-
-.lore-section h2 {
-    font-size: 3rem;
-    color: #efe0ff;
-    text-align: center;
-    margin-bottom: 2rem;
-    position: relative;
-}
-
-.lore-section h2::before,
-.lore-section h2::after {
-    content: '◈';
-    font-size: 2rem;
-    margin: 0 1.5rem;
-    opacity: 0.7;
-    color: #b09fff;
-}
-
-.lore-content {
-    font-size: 1.4rem;
-    color: #ddd0f0;
-    line-height: 1.9;
-}
-
-.lore-content p {
-    margin-bottom: 1.5rem;
-}
-
-/* Цитата */
-.quote-section {
-    margin: 5rem 0;
-}
-
-.quote-card {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 3rem;
-    background: linear-gradient(145deg, rgba(20, 15, 35, 0.8), rgba(8, 5, 20, 0.9));
-    border-left: 5px solid #b09fff;
-    border-radius: 20px;
-    position: relative;
-    box-shadow: 0 10px 40px rgba(150, 130, 255, 0.3);
-}
-
-.quote {
-    font-size: 2.3rem;
-    font-style: italic;
-    color: #f5eaff;
-    text-shadow: 0 0 15px #b09fff;
-    margin-bottom: 1rem;
-}
-
-.author {
-    text-align: right;
-    font-size: 1.5rem;
-    color: #c4b5e6;
-}
-
-/* Promotion Page */
-.promotion-page .page-header {
-    text-align: center;
-    margin: 3rem 0;
+    margin: 2rem 0 3rem;
 }
 
 .glow-text {
-    font-size: 4.5rem;
-    color: #f2e6ff;
-    text-shadow: 0 0 30px #b09fff, 0 0 60px #8f7aff;
-    margin-bottom: 0.5rem;
+    font-size: 2.8rem;
+    font-weight: 600;
+    color: #f0eaff;
+    letter-spacing: -0.5px;
+    margin-bottom: 0.3rem;
 }
 
 .sub-title {
     display: block;
-    font-size: 2.2rem;
-    color: #d4c0f0;
-    margin-top: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #c4b5f0;
+    margin-top: 0.2rem;
 }
 
 .moon-divider {
-    width: 250px;
+    width: 120px;
     height: 2px;
-    margin: 2rem auto;
-    background: linear-gradient(90deg, transparent, #b09fff, #8f7aff, #b09fff, transparent);
+    margin: 1.5rem auto;
+    background: linear-gradient(90deg, transparent, #a28eff, #c4b5ff, #a28eff, transparent);
 }
 
 .header-description {
-    font-size: 1.6rem;
-    color: #d9ccf0;
-    font-style: italic;
-    margin-top: 1rem;
-    text-align: center;
-    text-shadow: 0 0 15px rgba(176, 159, 255, 0.5);
+    font-size: 1.2rem;
+    color: #b7a8e0;
+    font-weight: 300;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
-/* Сетка способностей */
+/* Сетка карточек */
 .abilities-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2.5rem;
-    margin: 4rem 0;
+    gap: 1.8rem;
+    margin: 3rem 0;
 }
 
+/* Карточка стиля */
 .ability-card {
-    background: rgba(15, 12, 30, 0.7);
-    border: 1px solid rgba(200, 170, 255, 0.2);
-    border-radius: 20px;
-    padding: 2.5rem 1.5rem;
-    text-align: center;
-    backdrop-filter: blur(5px);
-    transition: all 0.4s ease;
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
-    min-height: 280px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-}
-
-.ability-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 240, 200, 0.1), transparent);
-    transition: left 0.6s;
-}
-
-.ability-card:hover::before {
-    left: 100%;
+    background: rgba(20, 16, 32, 0.7);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(170, 140, 250, 0.15);
+    border-radius: 24px;
+    padding: 1.8rem 1.8rem 2rem;
+    transition: all 0.25s ease;
+    box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.5);
 }
 
 .ability-card:hover {
-    transform: translateY(-15px) scale(1.02);
-    box-shadow: 0 0 40px rgba(176, 159, 255, 0.4), 0 15px 30px rgba(0,0,0,0.6);
-    border-color: #b09fff;
+    transform: translateY(-6px);
+    border-color: rgba(200, 170, 255, 0.5);
+    box-shadow: 0 20px 35px -8px rgba(100, 70, 200, 0.3);
+    background: rgba(25, 20, 40, 0.8);
 }
 
 .ability-card h2 {
-    font-size: 2.2rem;
-    color: #ffecaa;
-    text-shadow: 0 0 20px #b09fff;
-    margin-bottom: 1rem;
-    letter-spacing: 1px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #a28eff;
+    margin-bottom: 0.8rem;
+    opacity: 0.8;
 }
 
 .ability-name {
     font-size: 1.5rem;
-    color: #f0e2ff;
-    font-weight: 500;
-    margin-top: 0.5rem;
-    line-height: 1.5;
-}
-
-.card-front, .card-back {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    width: 100%;
-}
-
-.card-back p {
-    font-size: 1.3rem;
-    line-height: 1.7;
-    color: #f5ecff;
-    padding: 1.2rem;
-}
-
-/* Scroll show секция */
-.scroll-show {
-    text-align: center;
-    padding: 5rem 2rem;
-    margin: 5rem 0;
-    background: rgba(10, 8, 25, 0.5);
-    border-radius: 50px;
-    border: 1px solid rgba(176, 159, 255, 0.2);
-    backdrop-filter: blur(5px);
-}
-
-.scroll-show h2 {
-    font-size: 3.5rem;
-    color: #f2e6ff;
-    margin-bottom: 2rem;
-    text-shadow: 0 0 20px #b09fff;
-}
-
-.scroll-show p {
-    font-size: 1.6rem;
-    max-width: 800px;
-    margin: 0 auto 3rem;
-    color: #e0d0f5;
-}
-
-.crescent-button {
-    background: transparent;
-    border: 2px solid #b09fff;
-    color: #b09fff;
-    font-size: 1.6rem;
-    font-family: 'Cormorant Garamond', serif;
-    padding: 1.2rem 4rem;
-    border-radius: 60px;
-    cursor: pointer;
-    transition: 0.4s;
-    position: relative;
-    overflow: hidden;
-    letter-spacing: 2px;
     font-weight: 600;
+    line-height: 1.3;
+    color: #ffffff;
+    margin-bottom: 1.2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(170, 140, 250, 0.2);
 }
 
-.crescent-button:hover {
-    color: #0a0a1a;
-    background: #b09fff;
-    border-color: #b09fff;
-    box-shadow: 0 0 40px #b09fff;
-    transform: scale(1.05);
+.ability-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #d8cef5;
+    font-weight: 300;
 }
 
 /* Footer */
 .footer {
     text-align: center;
-    padding: 2.5rem;
-    margin-top: 5rem;
-    border-top: 1px solid rgba(200, 180, 255, 0.2);
-    font-size: 1.3rem;
-    color: #b8a8e0;
-    position: relative;
-    z-index: 2;
+    padding: 2rem;
+    margin-top: 4rem;
+    border-top: 1px solid rgba(170, 140, 250, 0.15);
+    font-size: 0.95rem;
+    color: #9485c0;
 }
 
-/* Анимации */
-.fade-in {
-    animation: fadeIn 1.8s ease-in;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .title {
-        font-size: 3rem;
-    }
-    
-    .subtitle {
-        font-size: 1.4rem;
+/* Адаптивность */
+@media (max-width: 700px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 0.8rem;
+        padding: 1rem;
     }
     
     .nav-menu {
-        gap: 1.2rem;
-    }
-    
-    .nav-menu a {
-        font-size: 1.1rem;
+        gap: 1.5rem;
     }
     
     .glow-text {
-        font-size: 2.8rem;
-    }
-    
-    .sub-title {
-        font-size: 1.5rem;
-    }
-    
-    .ability-card h2 {
-        font-size: 1.8rem;
-    }
-    
-    .ability-name {
-        font-size: 1.2rem;
-    }
-    
-    .quote {
-        font-size: 1.6rem;
-    }
-    
-    .scroll-show h2 {
         font-size: 2.2rem;
     }
     
-    .scroll-show p {
+    .sub-title {
+        font-size: 1.2rem;
+    }
+    
+    .ability-card {
+        padding: 1.5rem;
+    }
+    
+    .ability-name {
         font-size: 1.3rem;
     }
-}
-
-/* Стилизация скролла */
-::-webkit-scrollbar {
-    width: 12px;
-}
-
-::-webkit-scrollbar-track {
-    background: #0f0f1f;
-}
-
-::-webkit-scrollbar-thumb {
-    background: linear-gradient(180deg, #6b5a9e, #3f3570);
-    border-radius: 6px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(180deg, #8f7aff, #5a4c9e);
 }
