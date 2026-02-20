@@ -475,4 +475,75 @@ body.moon-breathing::after {
 @keyframes rotateRays {
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
+
+}
+/* Дополнительные стили для promotion.html */
+.header-description {
+    font-size: 1.5rem;
+    color: #c4b5e6;
+    font-style: italic;
+    margin-top: 1rem;
+    text-align: center;
+    text-shadow: 0 0 10px rgba(183, 164, 255, 0.5);
+}
+
+.ability-card .ability-name {
+    font-size: 1.1rem;
+    color: #e6d5ff;
+    font-weight: 300;
+    margin-top: 0.5rem;
+    line-height: 1.4;
+}
+
+.card-front h2 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    color: #ffd966;
+    text-shadow: 0 0 10px #bfa5ff;
+}
+
+.card-back p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #f0e6ff;
+    padding: 1rem;
+}
+
+/* Улучшенные карточки */
+.ability-card {
+    min-height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-front, .card-back {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+/* Для равномерной сетки */
+.abilities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+/* Медиа-запросы для мобильных */
+@media (max-width: 768px) {
+    .ability-card .ability-name {
+        font-size: 1rem;
+    }
+    
+    .card-front h2 {
+        font-size: 1.5rem;
+    }
+    
+    .header-description {
+        font-size: 1.2rem;
+    }
 }
