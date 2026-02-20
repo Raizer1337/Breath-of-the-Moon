@@ -1,4 +1,4 @@
-/* site.css - Дыхание Луны - Полный стиль с большими карточками */
+/* site.css - Дыхание Луны - Огромные карточки */
 
 * {
     margin: 0;
@@ -6,7 +6,7 @@
     box-sizing: border-box;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 body.moon-breathing {
     background: #0b0710;
@@ -27,8 +27,8 @@ body.moon-breathing::before {
     width: 100%;
     height: 100%;
     background: 
-        radial-gradient(circle at 30% 40%, rgba(110, 80, 220, 0.15) 0%, transparent 40%),
-        radial-gradient(circle at 80% 70%, rgba(80, 60, 200, 0.12) 0%, transparent 40%),
+        radial-gradient(circle at 30% 40%, rgba(120, 90, 240, 0.2) 0%, transparent 40%),
+        radial-gradient(circle at 80% 70%, rgba(100, 70, 220, 0.15) 0%, transparent 40%),
         linear-gradient(145deg, #0c0818 0%, #1a1230 50%, #0c0818 100%);
     z-index: -2;
 }
@@ -63,23 +63,23 @@ body.moon-breathing::after {
     position: fixed;
     top: 5%;
     right: 5%;
-    width: 250px;
-    height: 250px;
-    background: radial-gradient(circle at 35% 35%, rgba(245, 235, 200, 0.25), rgba(160, 140, 240, 0.1) 70%, transparent);
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle at 35% 35%, rgba(255, 245, 210, 0.3), rgba(170, 150, 255, 0.15) 70%, transparent);
     border-radius: 50%;
-    filter: blur(50px);
+    filter: blur(60px);
     z-index: -1;
     animation: moonDrift 20s infinite alternate ease-in-out;
 }
 
 @keyframes moonDrift {
     0% { transform: translate(0, 0) scale(1); opacity: 0.3; }
-    100% { transform: translate(-25px, -15px) scale(1.15); opacity: 0.5; }
+    100% { transform: translate(-30px, -20px) scale(1.2); opacity: 0.6; }
 }
 
 /* Навигация */
 .nav-bar {
-    background: rgba(8, 6, 16, 0.75);
+    background: rgba(8, 6, 16, 0.8);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(170, 140, 250, 0.2);
     position: sticky;
@@ -88,43 +88,43 @@ body.moon-breathing::after {
 }
 
 .nav-container {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
-    padding: 0.9rem 2rem;
+    padding: 1rem 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 .nav-logo {
-    font-size: 1.5rem;
-    font-weight: 600;
+    font-size: 1.6rem;
+    font-weight: 700;
     text-decoration: none;
-    color: #e4daff;
+    color: #e8ddff;
     letter-spacing: 0.5px;
-    background: rgba(140, 110, 255, 0.1);
-    padding: 0.5rem 1.2rem;
-    border-radius: 40px;
-    border: 1px solid rgba(170, 140, 250, 0.3);
+    background: rgba(140, 110, 255, 0.15);
+    padding: 0.6rem 1.5rem;
+    border-radius: 50px;
+    border: 1px solid rgba(180, 150, 255, 0.3);
     transition: 0.2s;
 }
 
 .nav-logo:hover {
-    background: rgba(170, 140, 250, 0.2);
-    border-color: rgba(200, 180, 255, 0.6);
-    transform: translateY(-1px);
+    background: rgba(170, 140, 250, 0.25);
+    border-color: rgba(210, 190, 255, 0.6);
+    transform: translateY(-2px);
 }
 
 .nav-menu {
     display: flex;
     list-style: none;
-    gap: 2rem;
+    gap: 2.5rem;
 }
 
 .nav-menu a {
     text-decoration: none;
-    color: #ccc3f0;
-    font-size: 1.1rem;
+    color: #d0c5f5;
+    font-size: 1.2rem;
     font-weight: 500;
     padding: 0.5rem 0.2rem;
     position: relative;
@@ -138,7 +138,7 @@ body.moon-breathing::after {
     left: 0;
     width: 0;
     height: 2px;
-    background: linear-gradient(90deg, #a28eff, #7a5fff);
+    background: linear-gradient(90deg, #b09fff, #8a75ff);
     transition: width 0.2s ease;
 }
 
@@ -149,11 +149,12 @@ body.moon-breathing::after {
 
 .nav-menu a.active {
     color: #ffffff;
+    font-weight: 600;
 }
 
 /* Основной контейнер */
 .container {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
     padding: 2rem;
     position: relative;
@@ -167,173 +168,176 @@ body.moon-breathing::after {
 }
 
 .glow-text {
-    font-size: 2.8rem;
-    font-weight: 600;
-    color: #f0eaff;
+    font-size: 3.2rem;
+    font-weight: 800;
+    color: #f2eaff;
     letter-spacing: -0.5px;
     margin-bottom: 0.3rem;
+    text-shadow: 0 0 20px rgba(170, 140, 250, 0.5);
 }
 
 .sub-title {
     display: block;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     font-weight: 400;
-    color: #c4b5f0;
+    color: #ccbdff;
     margin-top: 0.2rem;
 }
 
 .moon-divider {
-    width: 120px;
-    height: 2px;
+    width: 150px;
+    height: 3px;
     margin: 1.5rem auto;
-    background: linear-gradient(90deg, transparent, #a28eff, #c4b5ff, #a28eff, transparent);
+    background: linear-gradient(90deg, transparent, #b09fff, #d4c0ff, #b09fff, transparent);
+    border-radius: 3px;
 }
 
 .header-description {
-    font-size: 1.2rem;
-    color: #b7a8e0;
+    font-size: 1.3rem;
+    color: #c0b0e8;
     font-weight: 300;
-    max-width: 600px;
+    max-width: 700px;
     margin: 0 auto;
 }
 
-/* Сетка карточек - увеличенный размер */
+/* Сетка карточек - ОГРОМНЫЙ размер */
 .abilities-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-    gap: 2rem;
-    margin: 3rem 0;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 2.5rem;
+    margin: 4rem 0;
 }
 
-/* Карточка стиля с изображением - увеличенная */
+/* Карточка стиля - ОГРОМНАЯ */
 .ability-card {
-    background: rgba(18, 14, 30, 0.8);
+    background: rgba(20, 16, 35, 0.85);
     backdrop-filter: blur(8px);
-    border: 1px solid rgba(170, 140, 250, 0.15);
-    border-radius: 28px;
+    border: 1px solid rgba(180, 150, 255, 0.2);
+    border-radius: 32px;
     overflow: hidden;
     transition: all 0.3s ease;
-    box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 25px 40px -15px rgba(0, 0, 0, 0.7);
     display: flex;
     flex-direction: column;
 }
 
 .ability-card:hover {
-    transform: translateY(-8px);
-    border-color: rgba(200, 170, 255, 0.6);
-    box-shadow: 0 25px 40px -10px rgba(130, 100, 255, 0.4);
+    transform: translateY(-10px);
+    border-color: rgba(210, 180, 255, 0.6);
+    box-shadow: 0 30px 50px -12px rgba(140, 110, 255, 0.4);
 }
 
-/* Увеличенная картинка */
+/* ОГРОМНАЯ картинка */
 .card-image {
     width: 100%;
-    height: 220px;
+    height: 300px;
     overflow: hidden;
-    border-bottom: 3px solid rgba(170, 140, 250, 0.4);
+    border-bottom: 3px solid rgba(180, 150, 255, 0.4);
 }
 
 .card-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.6s ease;
+    object-position: center;
+    transition: transform 0.7s ease;
     display: block;
 }
 
 .ability-card:hover .card-image img {
-    transform: scale(1.08);
+    transform: scale(1.1);
 }
 
 /* Контент карточки */
 .card-content {
-    padding: 2rem 1.8rem 2rem;
+    padding: 2.5rem 2rem 2.5rem;
 }
 
 .ability-card h2 {
-    font-size: 1.2rem;
-    font-weight: 700;
+    font-size: 1.4rem;
+    font-weight: 800;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    color: #a28eff;
-    margin-bottom: 1rem;
+    letter-spacing: 3px;
+    color: #b09fff;
+    margin-bottom: 1.2rem;
     opacity: 0.9;
 }
 
 .ability-name {
-    font-size: 1.8rem;
-    font-weight: 700;
+    font-size: 2rem;
+    font-weight: 800;
     line-height: 1.3;
     color: #ffffff;
-    margin-bottom: 1.2rem;
-    padding-bottom: 1rem;
-    border-bottom: 2px solid rgba(170, 140, 250, 0.25);
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.2rem;
+    border-bottom: 2px solid rgba(180, 150, 255, 0.3);
     text-shadow: 0 2px 5px rgba(0,0,0,0.3);
 }
 
 .ability-description {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     line-height: 1.7;
-    color: #d8cef5;
+    color: #dcd0ff;
     font-weight: 300;
 }
 
 /* Главная страница - контент */
 .main-content {
-    max-width: 800px;
+    max-width: 900px;
     margin: 3rem auto;
-    background: rgba(20, 16, 32, 0.7);
-    padding: 3rem;
-    border-radius: 28px;
-    border: 1px solid rgba(170, 140, 250, 0.2);
-    backdrop-filter: blur(5px);
+    background: rgba(22, 18, 35, 0.8);
+    padding: 3.5rem;
+    border-radius: 32px;
+    border: 1px solid rgba(180, 150, 255, 0.25);
+    backdrop-filter: blur(8px);
 }
 
 .main-content p {
-    font-size: 1.25rem;
+    font-size: 1.3rem;
     line-height: 1.8;
-    margin-bottom: 1.8rem;
-    color: #e0d5ff;
+    margin-bottom: 2rem;
+    color: #e2d8ff;
 }
 
 .quote-text {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     line-height: 1.7;
     font-style: italic;
-    color: #c4b0ff;
+    color: #ccbdff;
     text-align: center;
     margin-top: 2.5rem;
-    padding-top: 1.8rem;
-    border-top: 2px solid rgba(170, 140, 250, 0.25);
+    padding-top: 2rem;
+    border-top: 2px solid rgba(180, 150, 255, 0.3);
 }
 
 /* Footer */
 .footer {
     text-align: center;
-    padding: 2rem;
-    margin-top: 4rem;
+    padding: 2.5rem;
+    margin-top: 5rem;
     border-top: 1px solid rgba(170, 140, 250, 0.15);
-    font-size: 1rem;
-    color: #9485c0;
+    font-size: 1.1rem;
+    color: #9f8fd0;
 }
 
 /* Адаптивность */
-@media (max-width: 700px) {
+@media (max-width: 800px) {
     .nav-container {
         flex-direction: column;
-        gap: 0.8rem;
+        gap: 1rem;
         padding: 1rem;
     }
     
     .nav-menu {
-        gap: 1.5rem;
+        gap: 2rem;
     }
     
     .glow-text {
-        font-size: 2.2rem;
+        font-size: 2.5rem;
     }
     
     .sub-title {
-        font-size: 1.2rem;
+        font-size: 1.4rem;
     }
     
     .abilities-grid {
@@ -341,10 +345,28 @@ body.moon-breathing::after {
     }
     
     .card-image {
+        height: 250px;
+    }
+    
+    .ability-name {
+        font-size: 1.8rem;
+    }
+    
+    .main-content {
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 500px) {
+    .card-image {
         height: 200px;
     }
     
     .ability-name {
-        font-size: 1.6rem;
+        font-size: 1.5rem;
+    }
+    
+    .ability-description {
+        font-size: 1rem;
     }
 }
