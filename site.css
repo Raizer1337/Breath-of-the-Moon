@@ -1,5 +1,3 @@
-/* site.css - Дыхание Луны - Карточки-гиганты */
-
 * {
     margin: 0;
     padding: 0;
@@ -18,7 +16,6 @@ body.moon-breathing {
     overflow-x: hidden;
 }
 
-/* Фоновое свечение */
 body.moon-breathing::before {
     content: '';
     position: fixed;
@@ -33,7 +30,6 @@ body.moon-breathing::before {
     z-index: -2;
 }
 
-/* Звезды */
 body.moon-breathing::after {
     content: '';
     position: fixed;
@@ -58,7 +54,6 @@ body.moon-breathing::after {
     pointer-events: none;
 }
 
-/* Луна на фоне */
 .moon-bg {
     position: fixed;
     top: 5%;
@@ -77,7 +72,6 @@ body.moon-breathing::after {
     100% { transform: translate(-40px, -30px) scale(1.3); opacity: 0.7; }
 }
 
-/* Навигация */
 .nav-bar {
     background: rgba(8, 6, 16, 0.8);
     backdrop-filter: blur(12px);
@@ -152,7 +146,6 @@ body.moon-breathing::after {
     font-weight: 600;
 }
 
-/* Основной контейнер */
 .container {
     max-width: 1400px;
     margin: 0 auto;
@@ -161,7 +154,6 @@ body.moon-breathing::after {
     z-index: 2;
 }
 
-/* Заголовок страницы */
 .page-header {
     text-align: center;
     margin: 2rem 0 3rem;
@@ -200,7 +192,6 @@ body.moon-breathing::after {
     margin: 0 auto;
 }
 
-/* Сетка карточек - ширина не меняется */
 .abilities-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
@@ -208,7 +199,6 @@ body.moon-breathing::after {
     margin: 4rem 0;
 }
 
-/* Карточка стиля - УВЕЛИЧЕННАЯ ПО ВЫСОТЕ В 2 РАЗА */
 .ability-card {
     background: rgba(20, 16, 35, 0.85);
     backdrop-filter: blur(8px);
@@ -228,7 +218,6 @@ body.moon-breathing::after {
     box-shadow: 0 30px 50px -12px rgba(140, 110, 255, 0.4);
 }
 
-/* ГИГАНТСКАЯ картинка - 900px высота (в 2 раза больше предыдущих 450px) */
 .card-image {
     width: 100%;
     height: 900px;
@@ -249,7 +238,6 @@ body.moon-breathing::after {
     transform: scale(1.1);
 }
 
-/* Контент карточки - увеличен пропорционально */
 .card-content {
     padding: 4rem 3rem 4rem;
 }
@@ -282,7 +270,6 @@ body.moon-breathing::after {
     font-weight: 300;
 }
 
-/* Главная страница - контент */
 .main-content {
     max-width: 900px;
     margin: 3rem auto;
@@ -311,7 +298,6 @@ body.moon-breathing::after {
     border-top: 2px solid rgba(180, 150, 255, 0.3);
 }
 
-/* Footer */
 .footer {
     text-align: center;
     padding: 2.5rem;
@@ -321,7 +307,6 @@ body.moon-breathing::after {
     color: #9f8fd0;
 }
 
-/* Адаптивность для разных экранов */
 @media (max-width: 1400px) {
     .card-image {
         height: 800px;
@@ -406,7 +391,6 @@ body.moon-breathing::after {
     }
 }
 
-/* Для очень больших экранов */
 @media (min-width: 2000px) {
     .card-image {
         height: 1000px;
@@ -420,3 +404,4 @@ body.moon-breathing::after {
         font-size: 1.8rem;
     }
 }
+
